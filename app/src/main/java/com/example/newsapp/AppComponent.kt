@@ -1,0 +1,25 @@
+package com.example.newsapp
+
+import dagger.Component
+import dagger.Module
+import dagger.Provides
+
+
+data class Warrior(val name: String)
+
+@Component(modules = [AppModule::class])
+interface AppComponent {
+    fun getWarrior():Warrior
+}
+
+@Module
+class AppModule {
+    private var index = 0
+
+    @Provides
+    fun provideWarrior(): Warrior {
+        index++
+        return Warrior("My name is $index")
+    }
+}
+
