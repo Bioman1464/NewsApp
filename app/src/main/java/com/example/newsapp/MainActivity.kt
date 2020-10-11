@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         Log.d("InjectionTest", paladin.hp.toString())
     }
 }
