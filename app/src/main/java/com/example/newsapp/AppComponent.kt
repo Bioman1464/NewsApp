@@ -16,6 +16,7 @@ interface AppComponent {
 class AppModule {
     private var index = 0
 
+    @AppScope
     @Provides
     fun provideWarrior(): Warrior {
         index++
