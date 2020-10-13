@@ -7,7 +7,10 @@ import dagger.Provides
 
 data class Warrior(val name: String)
 
-@Component(modules = [AppModule::class])
+@AppScope
+@Component(modules = [
+    AppModule::class
+])
 interface AppComponent {
     fun getWarrior():Warrior
 }
