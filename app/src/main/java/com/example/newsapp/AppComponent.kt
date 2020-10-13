@@ -13,6 +13,8 @@ data class Warrior(val name: String)
 ])
 interface AppComponent {
     fun getWarrior():Warrior
+    fun warriorScreenComponent(warriorScreenModule: WarriorScreenModule)
+            : WarriorScreenComponent
 }
 
 @Module

@@ -1,8 +1,8 @@
 package com.example.newsapp
 
-import dagger.Component
 import dagger.Module
 import dagger.Provides
+import dagger.Subcomponent
 import javax.inject.Scope
 
 
@@ -22,9 +22,8 @@ class WarriorScreenModule {
 }
 
 @WarriorScreenScope
-@Component(
-    modules = [WarriorScreenModule::class],
-    dependencies = [AppComponent::class]
+@Subcomponent(
+    modules = [WarriorScreenModule::class]
 )
 interface WarriorScreenComponent {
     fun inject(warriorActivity: MainActivity)

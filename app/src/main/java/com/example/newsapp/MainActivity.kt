@@ -17,9 +17,8 @@ class MainActivity : AppCompatActivity() {
         val appComponent = DaggerAppComponent.builder()
             .appModule(AppModule())
             .build()
-        val warriorScreenComponent = DaggerWarriorScreenComponent.builder()
-            .appComponent(appComponent)
-            .build()
+
+        val warriorScreenComponent = appComponent.warriorScreenComponent(WarriorScreenModule())
         warriorScreenComponent.inject(this)
         Log.d("WarriorScreen", presenter.warrior.name)
     }
